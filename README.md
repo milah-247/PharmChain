@@ -49,7 +49,7 @@ PharmChain provides a transparent and tamper-proof solution for verifying drug a
 - Docker Compose orchestration
 
 ---
-
+```
 ## Project Structure
 /pharm-chain
 │
@@ -72,6 +72,7 @@ PharmChain provides a transparent and tamper-proof solution for verifying drug a
 ├── docker/ # Dockerfiles
 ├── docker-compose.yml
 └── README.md
+```
 
 
 ---
