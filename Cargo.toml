@@ -1,0 +1,3 @@
+[workspace]
+members = ["contracts/vacci_chain"]
+resolver = "2"

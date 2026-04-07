@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.backend
+    env_file: ./backend/.env
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+      args:
+        REACT_APP_API_URL: ""   # empty = use nginx proxy at /api
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  python-service:
+    build:
+      context: ./python-service
+      dockerfile: ../docker/Dockerfile.python
+    environment:
+      BACKEND_URL: http://backend:3001
+    ports:
+      - "8000:8000"
+    depends_on:
+      - backend
+    restart: unless-stopped

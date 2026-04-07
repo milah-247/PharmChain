@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Build outputs
+build/
+dist/
+target/
+
+# Environment files
+.env
+*.env
+
+# Rust
+Cargo.lock
+
+# Misc
+.DS_Store
+*.log
